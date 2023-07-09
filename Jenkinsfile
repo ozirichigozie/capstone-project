@@ -32,7 +32,7 @@ pipeline {
         stage("Deploy LakesideMutual to EKS") {
             steps {
                 script {
-                    dir('capstone/kubernetes/manifests') {
+                    dir('lakesidemutual/kubernetes/manifests') {
                         sh "kubectl apply -f customer-core.yaml"
                         sh "kubectl apply -f customer-management-backend.yaml"
                         sh "kubectl apply -f customer-management-frontend.yaml"
