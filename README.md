@@ -1,2 +1,3 @@
-# PROVISIONING A SOCK-SHOP EXAMPLE OF A MICRO-SERVICE APP AND A VOTING APP USING TERRAFORM, KUBERNETES AND JENKINS ON AWS
-Here we deploy a microservices-based architecture on Kubernetes, using a clear IaC (Infrastructure as Code) deployment to ensure we deploy our services in a fast manner.
+# DEPLOYING LAKESIDE MUTUAL, A MICRO-SERVICES APP ON AWS USING TERRAFORM, KUBERNETES AND JENKINS
+![cover-photo](./lakesidemutual/img/projectCloudArchitectureDiagramGroup.png)
+This project adopts a CI/CD approach to deploy a microservices-based architecture on AWS, using Kubernetes, Terraform and Jenkins to execute Infrastructure as Code...
