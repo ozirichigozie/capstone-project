@@ -1,7 +1,7 @@
 resource "kubernetes_ingress_v1" "micro-ingress" {
   metadata {
-    name      = "lakesidemutual"
-    namespace = "lakesidemutual"
+    name      = "customer-management-frontend"
+    namespace = "customer-management-frontend"
     labels = {
       name = "front-end"
     }
@@ -16,7 +16,7 @@ resource "kubernetes_ingress_v1" "micro-ingress" {
       http {
         path {
           backend {
-            service{
+            service {
               name = "front-end"
               port {
                 number = 80

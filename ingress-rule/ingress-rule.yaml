@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: lakesidemutual
-  name: lakesidemutual
+  namespace: customer-management-frontend
+  name: customer-management-frontend
   annotations:
     kubernetes.io/ingress.class: nginx # this should be uncommented if ingress used in "regular" cluster
    # nginx.ingress.kubernetes.io/rewrite-target: /

@@ -16,8 +16,8 @@ data "aws_eks_cluster_auth" "capstone_auth" {
 provider "kubernetes" {
   host                   = data.aws_eks_cluster.capstone.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.capstone.certificate_authority[0].data)
-  version          = "2.16.1"
-  config_path = "~/.kube/config"
+  version                = "2.16.1"
+  config_path            = "~/.kube/config"
   exec {
     api_version = "client.authentication.k8s.io/v1beta1"
     args        = ["eks", "get-token", "--cluster-name", "capstone"]

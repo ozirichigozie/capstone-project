@@ -1,18 +1,18 @@
 resource "time_sleep" "wait_for_kubernetes" {
 
-    depends_on = [
-        data.aws_eks_cluster.capstone
-    ]
+  depends_on = [
+    data.aws_eks_cluster.capstone
+  ]
 
-    create_duration = "20s"
+  create_duration = "20s"
 }
 
 resource "kubernetes_namespace" "nginx-namespace" {
 
   depends_on = [time_sleep.wait_for_kubernetes]
   metadata {
-    name = "lakesidemutual"
-    # formerly nginx-ingress
+    name = "nginx-ingress"
+    # formerly lakesidemutual
   }
 }
 
@@ -35,7 +35,7 @@ resource "helm_release" "ingress_nginx" {
     value = "LoadBalancer"
   }
 
- set {
+  set {
     name  = "podSecurityPolicy.enabled"
     value = true
   }
@@ -58,13 +58,13 @@ resource "helm_release" "ingress_nginx" {
         memory = "30Mi"
       }
     })
-  } 
-  
+  }
+
 }
 
 
 
 # Display load balancer hostname (typically present in AWS)
 /* output "load_balancer_hostname" {
-  value = kubernetes_ingress.sock-shop.status.0.load_balancer.0.ingress.0.hostname
+  value = kubernetes_ingress.lakesidemutual.status.0.load_balancer.0.ingress.0.hostname
 } */
