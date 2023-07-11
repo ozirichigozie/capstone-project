@@ -11,8 +11,8 @@ resource "kubernetes_namespace" "nginx-namespace" {
 
   depends_on = [time_sleep.wait_for_kubernetes]
   metadata {
-    name = "nginx-ingress"
-    # formerly lakesidemutual
+    name = "customer-management-frontend"
+    # formerly nginx-ingress
   }
 }
 
