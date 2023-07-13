@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: customer-management-frontend
-  name: customer-management-frontend
+  namespace: e-commerce
+  name: e-commerce
   annotations:
     kubernetes.io/ingress.class: nginx # this should be uncommented if ingress used in "regular" cluster
    # nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: lakesidemutual.cloudbusters.space
+  - host: capstone.cloudbusters.space
     http:
       path:
         backend:

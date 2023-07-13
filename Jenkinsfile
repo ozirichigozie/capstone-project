@@ -32,10 +32,12 @@ pipeline {
         stage("Deploy LakesideMutual to EKS") {
             steps {
                 script {
-                    dir('lakesidemutual/kubernetes/manifests') {
-                        sh "kubectl apply -f customer-core.yaml"
-                        sh "kubectl apply -f customer-management-backend.yaml"
-                        sh "kubectl apply -f customer-management-frontend.yaml"
+                    dir('e-commerce') {
+                        sh "kubectl apply -f cart-cna-microservice/"
+                        sh "kubectl apply -f products-cna-microservice/"
+                        sh "kubectl apply -f search-cna-microservice/"
+                        sh "kubectl apply -f store-ui/"
+                        sh "kubectl apply -f users-cna-microservice/"
                     }
                 }
             }

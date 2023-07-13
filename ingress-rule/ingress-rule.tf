@@ -1,7 +1,7 @@
 resource "kubernetes_ingress_v1" "micro-ingress" {
   metadata {
-    name      = "customer-management-frontend"
-    namespace = "customer-management-frontend"
+    name      = "e-commerce"
+    namespace = "e-commerce"
     labels = {
       name = "front-end"
     }
@@ -12,7 +12,7 @@ resource "kubernetes_ingress_v1" "micro-ingress" {
 
   spec {
     rule {
-      host = "lakesidemutual.cloudbusters.space"
+      host = "capstone.cloudbusters.space"
       http {
         path {
           backend {
